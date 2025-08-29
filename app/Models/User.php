@@ -21,12 +21,11 @@ class User extends Authenticatable
         'firstname', 
         'lastname', 
         'email', 
+        'email_verified_at',
         'password', 
         'phonenumber', 
         'role', 
         'last_login', 
-        'created_at', 
-        'updated_at'
     ];
 
     /**
@@ -52,7 +51,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function carts() {
+    public function cart() {
         return $this->hasOne(Cart::class);
     }
 
@@ -60,7 +59,7 @@ class User extends Authenticatable
         return $this->hasMany(Order::class);
     }
 
-    public function wishlists() {
+    public function wishlist() {
         return $this->hasOne(Wishlist::class);
     }
 }
